@@ -261,31 +261,7 @@
                 <textarea id="msg" rows="5" placeholder="Привет! Хотим предложить…" required></textarea>
               </div>
               <button class="btn primary" type="submit">Отправить</button>
-<a class="btn tg" id="tgBtn" href="#" rel="noopener">Написать в Telegram</a>
-</form>
-
-<script>
-  // Телеграм-кнопка: берёт тему и сообщение из формы и подставляет в текст
-  (function(){
-    var tg = document.getElementById('tgBtn');
-    if(!tg) return;
-    tg.addEventListener('click', function(e){
-      e.preventDefault();
-      var subj = document.getElementById('subj') ? document.getElementById('subj').value.trim() : '';
-      var msg  = document.getElementById('msg')  ? document.getElementById('msg').value.trim()  : '';
-      var text = '';
-      if(subj) text += 'Тема: ' + subj + '\n';
-      if(msg)  text += 'Сообщение: ' + msg;
-      if(!text) text = 'Привет! Хочу сотрудничество.';
-      // Пробуем открыть Telegram
-      var appUrl = 'tg://resolve?domain=kossta_skyline&text=' + encodeURIComponent(text);
-      var webUrl = 'https://t.me/share/url?url=' + encodeURIComponent('https://yaneso.su') + '&text=' + encodeURIComponent(text);
-      var opened = false;
-      var timer = setTimeout(function(){ if(!opened) window.open(webUrl, '_blank'); }, 200);
-      try { window.location.href = appUrl; opened = true; } catch(_) {}
-    });
-  })();
-</script>
+<a class="btn" href="https://t.me/kossta_skyline" target="_blank" rel="noopener">Написать в Telegram</a> </form> </div> </div> <div class="col-6"> <div class="card">
 
             <h2>Для партнёров</h2>
             <p class="muted">Скидывайте медиакит/бриф на почту или в ТГ. По запросу пришлю статистику каналов.</p>
