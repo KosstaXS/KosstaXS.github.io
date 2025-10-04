@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>kossta_skyline | Официальная визитка</title>
-  <meta name="description" content="kossta_skyline — стример. Расписание эфиров, ссылки на соцсети и контакты." />
+  <meta name="description" content="kossta_skyline | Официальная визитка. Расписание эфиров, ссылки на соцсети и контакты." />
   <meta name="color-scheme" content="dark" />
-  <meta property="og:title" content="kossta_skyline — стример" />
+  <meta property="og:title" content="kossta_skyline | Официальная визитка" />
   <meta property="og:description" content="Расписание совместных эфиров, ссылки на соцсети и контакты." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://yaneso.su/cover.jpg" />
@@ -173,11 +173,11 @@
     <section class="hero">
       <div class="card">
         <h1><span class="glitch" data-text="Привет! Я kossta_skyline.">Привет! Я kossta_skyline.</span></h1>
-        <p>Модератор телеграм‑чатов/каналов, контентмейкер, двигаюсь к цели — стать стримером с уверенным онлайном. На сайте — информация обо мне, мои ссылки и контакты.</p>
+        <p>Модератор телеграм‑чатов/каналов, контентмейкер. На сайте — информация обо мне, мои ссылки и контакты.</p>
         <div class="badges">
           <span class="badge">🎮 Twitch</span>
           <span class="badge">🕒 Свободный график</span>
-          <span class="badge">🖤 zxc / dark</span>
+          <span class="badge">🌐 RU</span>
         </div>
         <div class="socials" id="links">
           <a href="https://t.me/kossta_skyline" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M9.03 16.84l-.39 5.49c.56 0 .8-.24 1.1-.52l2.64-2.52 5.47 4c1.01.55 1.74.26 2-.94l3.62-17c.33-1.34-.48-1.95-1.46-1.6L1.67 9.76c-1.3.5-1.28 1.22-.22 1.54l5.42 1.69 12.6-7.95c.59-.36 1.12-.16.68.23" fill="currentColor"/></svg> Telegram</a>
@@ -207,7 +207,7 @@
         <div class="col-8">
           <div class="card">
             <h2>Обо мне</h2>
-            <p class="muted">Я родился 19 августа 2004 года. Живу в России. Модер, контентмейкер, учу английский/японский. Люблю экспериментировать со стилем, zxc/dark вайб, общение с аудиторией.</p>
+            <p class="muted">Молодой парень из провинции. Мой IRL nickname: Константин. Не привык общаться, но зато люблю прикалываться, мёртв внутри, снаружи выгляжу не лучше. Двигаюсь к цели — стать стримером с уверенным онлайном. Живу в России. Модератор, контентмейкер, изучаю иностранные языки.</p>
             <div class="list" style="margin-top:12px">
               <div class="item"><span class="dot"></span><div><b>Контент:</b> Разные игры по запросу, Dota 2, позже IRL, разговорные эфиры.</div></div>
               <div class="item"><span class="dot" style="background:var(--accent)"></span><div><b>Цель:</b> системный график, рост по качеству, комьюнити, монетизация.</div></div>
@@ -231,7 +231,7 @@
     <section id="schedule" class="section">
       <div class="card">
         <h2>Расписание эфиров</h2>
-        <p class="muted">Планы эфиров с коллабами.</p>
+        <p class="muted">Планы эфиров с коллабами</p>
         <div style="overflow:auto">
           <table class="schedule">
             <thead>
@@ -261,12 +261,32 @@
                 <textarea id="msg" rows="5" placeholder="Привет! Хотим предложить…" required></textarea>
               </div>
               <button class="btn primary" type="submit">Отправить</button>
-              <a class="btn" href="https://t.me/kossta_skyline" target="_blank" rel="noopener">Написать в Telegram</a>
-            </form>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card">
+<a class="btn tg" id="tgBtn" href="#" rel="noopener">Написать в Telegram</a>
+</form>
+
+<script>
+  // Телеграм-кнопка: берёт тему и сообщение из формы и подставляет в текст
+  (function(){
+    var tg = document.getElementById('tgBtn');
+    if(!tg) return;
+    tg.addEventListener('click', function(e){
+      e.preventDefault();
+      var subj = document.getElementById('subj') ? document.getElementById('subj').value.trim() : '';
+      var msg  = document.getElementById('msg')  ? document.getElementById('msg').value.trim()  : '';
+      var text = '';
+      if(subj) text += 'Тема: ' + subj + '\n';
+      if(msg)  text += 'Сообщение: ' + msg;
+      if(!text) text = 'Привет! Хочу сотрудничество.';
+      // Пробуем открыть Telegram
+      var appUrl = 'tg://resolve?domain=kossta_skyline&text=' + encodeURIComponent(text);
+      var webUrl = 'https://t.me/share/url?url=' + encodeURIComponent('https://yaneso.su') + '&text=' + encodeURIComponent(text);
+      var opened = false;
+      var timer = setTimeout(function(){ if(!opened) window.open(webUrl, '_blank'); }, 200);
+      try { window.location.href = appUrl; opened = true; } catch(_) {}
+    });
+  })();
+</script>
+
             <h2>Для партнёров</h2>
             <p class="muted">Скидывайте медиакит/бриф на почту или в ТГ. По запросу пришлю статистику каналов.</p>
             <ul class="muted" style="margin:10px 0 0; padding-left:18px">
