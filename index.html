@@ -131,6 +131,18 @@
         linear-gradient(90deg, transparent 49%, rgba(227,27,27,.08) 50%, transparent 51%) center/8px 100%;
       mix-blend-mode: soft-light; opacity:.15;
     }
+    .btn.tg {
+  background: linear-gradient(180deg, rgba(11,132,254,.95), rgba(2,87,200,.95));
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+.btn.tg:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(11,132,254,.25);
+}
+
   </style>
   <script type="application/ld+json">
   {
@@ -286,5 +298,28 @@
     // текущий год в футере
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
+  <script>
+  (function(){
+    var btn = document.getElementById('tgBtn');
+    if(!btn) return;
+
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var subj = (document.getElementById('subj')||{}).value || '';
+      var msg  = (document.getElementById('msg') ||{}).value || '';
+
+      var text = '';
+      if (subj) text += 'Тема: ' + subj + '\n';
+      if (msg)  text += 'Сообщение: ' + msg;
+      if (!text) text = 'Привет! Хочу сотрудничество.';
+
+      var webUrl = 'https://t.me/share/url?url=' + encodeURIComponent('https://yaneso.su') +
+                   '&text=' + encodeURIComponent(text);
+
+      window.open(webUrl, '_blank');
+    });
+  })();
+</script>
+
 </body>
 </html>
