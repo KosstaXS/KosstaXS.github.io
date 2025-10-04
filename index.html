@@ -21,10 +21,10 @@
     :root{
       --bg: #09090b;      /* почти чёрный */
       --panel: #0f1013;   /* графит */
-      --text: #e6e6e6;    /* светло‑серый */
-      --muted: #9aa0a6;   /* тускло‑серый */
-      --brand: #e31b1b;   /* кроваво‑красный */
-      --accent: #7f1d1d;  /* тёмно‑бордовый */
+      --text: #e6e6e6;    /* светло-серый */
+      --muted: #9aa0a6;   /* тускло-серый */
+      --brand: #e31b1b;   /* кроваво-красный */
+      --accent: #7f1d1d;  /* тёмно-бордовый */
       --ring: rgba(227,27,27,.35);
       --line: rgba(255,255,255,.08);
       --shadow: 0 10px 30px rgba(0,0,0,.6);
@@ -50,7 +50,15 @@
     }
     @keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-10px,6px)}50%{transform:translate(8px,-4px)}75%{transform:translate(-6px,12px)}100%{transform:translate(0,0)}}
 
-    a{color:inherit}
+    /* ГЛОБАЛЬНО: убираем подчёркивания у всех ссылок */
+    a{
+      color:inherit;
+      text-decoration: none;
+    }
+    a:hover, a:focus{
+      text-decoration: none;
+    }
+
     .container{max-width:1100px; margin-inline:auto; padding:24px; position:relative; z-index:2}
     header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0}
     .brand{display:flex; align-items:center; gap:14px}
@@ -99,7 +107,7 @@
     .item .dot{width:10px; height:10px; margin-top:7px; border-radius:50%; background: var(--brand); box-shadow:0 0 0 4px rgba(227,27,27,.18)}
 
     .socials{display:flex; gap:10px; flex-wrap:wrap}
-    .socials a{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px; text-decoration:none; border:1px solid var(--line)}
+    .socials a{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px; border:1px solid var(--line)}
     .socials a:hover{background:rgba(227,27,27,.08)}
     .socials svg{width:18px; height:18px; opacity:.9; filter:grayscale(1)}
 
@@ -157,7 +165,7 @@
         </div>
         <div class="title">
           <b>kossta_skyline</b>
-          <span>стример · контент‑криэйтор</span>
+          <span>стример · контент-криэйтор</span>
         </div>
       </div>
       <nav class="nav">
@@ -176,7 +184,7 @@
   <h1><span class="glitch" data-text="Привет!">Привет!</span><br>
   <span class="glitch" data-text="Я kossta_skyline.">Я kossta_skyline.<br></span></h1>
     
-        <p>Модератор телеграм‑чатов/каналов, контентмейкер.<br>На сайте — информация обо мне, мои ссылки и контакты.</p>
+        <p>Модератор телеграм-чатов/каналов, контентмейкер.<br>На сайте — информация обо мне, мои ссылки и контакты.</p>
         <div class="badges">
           <span class="badge">🎮 Twitch</span>
           <span class="badge">🕒 Свободный график</span>
@@ -185,7 +193,7 @@
         <div class="socials" id="links">
           <a href="https://t.me/kossta_skyline" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M9.03 16.84l-.39 5.49c.56 0 .8-.24 1.1-.52l2.64-2.52 5.47 4c1.01.55 1.74.26 2-.94l3.62-17c.33-1.34-.48-1.95-1.46-1.6L1.67 9.76c-1.3.5-1.28 1.22-.22 1.54l5.42 1.69 12.6-7.95c.59-.36 1.12-.16.68.23" fill="currentColor"/></svg> Telegram</a>
           <a href="https://www.youtube.com/@kossta_skyline" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm12-6.5s0-3.5-3.5-3.5H5.5C2 5 2 8.5 2 8.5v3s0 3.5 3.5 3.5h13c3.5 0 3.5-3.5 3.5-3.5v-3z" fill="currentColor"/></svg> YouTube</a>
-          <a href="https://www.twitch.tv/kossta_skyline" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 2L2 6v14h5v2h3l2-2h4l4-4V2H4zm15 11l-3 3h-5l-2 2v-2H6V4h13v9zM9 6H7v6h2V6zm4 0h-2v6h2V6zm4 0h-2v6h2V6z" fill="currentColor"/></svg> Twitch</a>
+          <a href="https://www.twitch.tv/kossta_skyline" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 2L2 6v14h5v2h3l2-2h4л4-4V2H4zm15 11л-3 3h-5л-2 2v-2H6V4h13v9zM9 6H7v6h2V6зм4 0h-2v6h2V6зм4 0h-2v6h2V6z" fill="currentColor"/></svg> Twitch</a>
           <a href="mailto:kosstaadvert@gmail.com"><svg viewBox="0 0 24 24"><path d="M12 13L2 6.76V6h20v.76L12 13zm0 2l10-6.24V18H2V8.76L12 15z" fill="currentColor"/></svg> Email</a>
         </div>
       </div>
@@ -199,7 +207,7 @@
             </linearGradient>
           </defs>
           <rect x="10" y="10" width="100" height="100" rx="24" fill="url(#g)"/>
-          <path d="M34 60l16-28h10L44 60l16 28H50L34 60zm28-28h10l-8 28 8 28H62l-8-28 8-28z" fill="#fff"/>
+          <path d="M34 60l16-28h10L44 60l16 28H50L34 60zm28-28h10л-8 28 8 28H62л-8-28 8-28z" fill="#fff"/>
         </svg>
         <p class="muted" style="margin:8px 0 0">Можно поставить свой аватар/артистик</p>
       </div>
@@ -264,12 +272,16 @@
                 <textarea id="msg" rows="5" placeholder="Привет! Хотим предложить…" required></textarea>
               </div>
               <button class="btn primary" type="submit">Отправить</button>
-<a class="btn" href="https://t.me/kossta_skyline" target="_blank" rel="noopener">Написать в Telegram</a> </form> </div> </div> <div class="col-6"> <div class="card">
-
+              <a class="btn" href="https://t.me/kossta_skyline" target="_blank" rel="noopener">Написать в Telegram</a>
+            </form>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
             <h2>Для партнёров</h2>
             <p class="muted">Скидывайте медиакит/бриф на почту или в ТГ. По запросу пришлю статистику каналов.</p>
             <ul class="muted" style="margin:10px 0 0; padding-left:18px">
-              <li>Форматы: интеграции, тесты девайсов, коллаб‑стримы</li>
+              <li>Форматы: интеграции, тесты девайсов, коллаб-стримы</li>
               <li>Регион: RU (русскоязычная аудитория)</li>
               <li>Готов к эксклюзивным активностям</li>
             </ul>
